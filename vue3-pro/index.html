@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <input type="text" v-model="message"/>
+        <br>    
+        <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>          
+        <br>
+        <button v-on:click="reverseMessage">反转消息</button>
+      </div>
+      
+      <script type="module" lang="ts">
+        import { reactive } from './src/vue.ts';
+        const obj = reactive({ a:1, b:2 })
+        console.log(obj,'obj');
+      </script>
+      
+    </script>
+      
+</body>
+</html>
