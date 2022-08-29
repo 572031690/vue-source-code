@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MVVM</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="person.name">
+        {{person.name}}
+        <div>
+            <span>我是{{person.name}}</span>
+        </div>
+        <div>就是那么任性</div>
+        <div>年龄:{{person.age}}</div>
+    </div>
+</body>
+<script src="MVVM.js"></script>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            person: {
+                name: 'jinhong姐',
+                age: '保密'
+            }
+        }
+    });
+</script>
+</html>
