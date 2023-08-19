@@ -1,0 +1,42 @@
+<!--
+ * @Author: mjh
+ * @Date: 2023-02-19 00:38:15
+ * @LastEditors: mjh
+ * @LastEditTime: 2023-02-19 00:40:32
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<div id="app"></div>
+
+    <script>
+        const app = Vue.createApp({
+          template: '<welcome-button v-on:welcome="sayHi"></welcome-button>',
+          methods: {
+            sayHi() {
+              console.log('你好，我是阿宝哥!');
+            }
+          }
+         })
+     
+        app.component('welcome-button', {
+          emits: ['welcome'],
+          template: `
+            <button v-on:click="$emit('welcome')">
+               欢迎
+            </button>
+           `
+         })
+         app.mount("#app")
+     </script>
+</body>
+</html>
+
